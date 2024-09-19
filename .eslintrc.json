@@ -1,0 +1,86 @@
+{
+  "extends": "next/core-web-vitals",
+  "globals": {
+    "Atomics": "readonly",
+    "HTMLElement": "readonly",
+    "NodeJS": "readonly",
+    "SharedArrayBuffer": "readonly",
+    "__API_URL__": "readonly",
+    "__COMMIT_ID__": "readonly",
+    "__ENVIRONMENT__": "readonly"
+  },
+  "ignorePatterns": [
+    "**/openapi/**",
+    "**/coverage/**",
+    "jest.config.ts"
+  ],
+  "overrides": [
+    {
+      "env": {
+        "jest": true
+      },
+      "files": [
+        "*.e2e.js"
+      ]
+    }
+  ],
+  "root": true,
+  "rules": {
+    "curly": "off",
+    "jsx-quotes": [
+      "warn",
+      "prefer-single"
+    ],
+    "max-len": [
+      "warn",
+      {
+        "code": 119,
+        "comments": 124,
+        "ignoreUrls": true,
+        "tabWidth": 2,
+        "ignoreTrailingComments": true,
+        "ignoreStrings": true
+      }
+    ],
+    "@next/next/no-img-element": "off",
+    "no-extend-native": [
+      "warn",
+      {
+        "exceptions": [
+          "Date"
+        ]
+      }
+    ],
+    "prettier/prettier": "off",
+    "quote-props": "off",
+    "quotes": [
+      "warn",
+      "single",
+      {
+        "avoidEscape": true
+      }
+    ],
+    "react-native/no-inline-styles": "off",
+    "react/display-name": "off",
+    "react/jsx-curly-brace-presence": [
+      "warn",
+      {
+        "children": "never",
+        "propElementValues": "always",
+        "props": "always"
+      }
+    ],
+    "react/jsx-sort-props": [
+      "warn",
+      {
+        "callbacksLast": true,
+        "ignoreCase": true,
+        "noSortAlphabetically": false,
+        "reservedFirst": true,
+        "shorthandFirst": true
+      }
+    ],
+    "react/no-unstable-nested-components": "off",
+    "react/react-in-jsx-scope": "off"
+  }
+}
