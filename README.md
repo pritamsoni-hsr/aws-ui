@@ -1,54 +1,56 @@
-# React + TypeScript + Vite
+# Project Setup and Usage
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## About the Project
 
-Currently, two official plugins are available:
+This project is a web application that allows users to manage and monitor AWS resources. It provides a
+user-friendly interface to filter, search, and view the resources across different AWS regions. The
+application leverages modern React practices, Redux for state management, and integrates with AWS SDK to fetch instance
+data.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses
-  [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast
-  Refresh
+## Use Case
 
-## Expanding the ESLint configuration
+The primary use case of this application is to enable cloud administrators and developers to efficiently view and
+manage their AWS resources. Users can:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint
-rules:
+- View a list of resources in their selected AWS region.
+- Filter and search resources.
 
-- Configure the top-level `parserOptions` property like this:
+## Project Setup
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-});
-```
+To set up the project locally, follow these steps:
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or
-  `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+1. **Clone the repository:**
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react';
+   ```bash
+   git clone git@github.com:pritamsoni-hsr/aws-ui.git
+   cd aws-ui
+   ```
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-});
-```
+2. **Install dependencies:** Make sure you have Bun installed, then run:
+
+   ```bash
+   bun install
+   ```
+
+3. **Set up environment variables:** Create a `.env` file in the root directory and add your AWS credentials:
+
+   ```plaintext
+   VITE_AWS_ACCESS_KEY_ID=<your-access-key-id>
+   VITE_AWS_SECRET_ACCESS_KEY=<your-secret-access-key>
+   VITE_AWS_SESSION_TOKEN=<your-session-token>
+   ```
+
+4. **Run the application:** Start the development server:
+
+   ```bash
+   bun run dev
+   ```
+
+5. **Access the application:** Open your browser and navigate to `http://localhost:5173` to view the application.
+
+## Additional Information
+
+For more details on how to use the application, refer to the documentation provided within the codebase or the comments
+in the components.
+
+Feel free to contribute to the project by submitting issues or pull requests.

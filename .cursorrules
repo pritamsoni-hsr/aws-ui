@@ -1,0 +1,4 @@
+- always use function react component
+- always use shadcn ui components
+- if there is a need for animations use framer-motion
+- the UI should feel modern as per 2024 design trends, and minimal
